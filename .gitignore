@@ -3,3 +3,6 @@ nonsense/
 community/
 ebooklib/
 mobi-python/
+.*.swp
+*.swp
+*.pyc

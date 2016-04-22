@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-DISTANCE = 15
+DISTANCE = 25
 
 charFile = open("characters.txt",'r')
 characters = charFile.read().split('\n')
@@ -18,7 +18,7 @@ for person in characters:
 
 for wordnum,word in enumerate(words):
 	if word in G.nodes():
-		print words[wordnum-DISTANCE:wordnum+DISTANCE]
+		#8print words[wordnum-DISTANCE:wordnum+DISTANCE]
 		for newWord in words[wordnum-DISTANCE:wordnum+DISTANCE]:
 			if newWord != word:
 				if newWord in G.nodes():
@@ -37,5 +37,6 @@ G.remove_nodes_from(to_remove)
 
 
 nx.draw(G,pos=nx.spring_layout(G))
+nx.draw_networkx_labels(G,pos=nx.spring_layout(G))
 nx.draw_networkx_labels(G,pos=nx.spring_layout(G))
 plt.show()
